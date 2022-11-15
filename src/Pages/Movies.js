@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Movies() {
   return (
-    <div>Movies</div>
-  )
+    <div>
+      <h1>Movies</h1>
+    </div>
+  );
 }

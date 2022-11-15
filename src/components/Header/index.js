@@ -1,26 +1,24 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function index() {
   return (
     <>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
-          <span class="navbar-brand">
-            MyFlix
-          </span>
+          <span className="navbar-brand">MyFlix</span>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <span class="nav-link" href="#">
-                  <NavLink to="/">Movies</NavLink>
-                </span>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item active">
+                <Link to="/" className="nav-link" href="#">
+                  Movies
+                </Link>
               </li>
-              <li class="nav-item">
-                <span class="nav-link" href="#">
-                  <NavLink to="/favourites">My Favourites</NavLink>
-                </span>
+              <li className="nav-item">
+                <Link to="/favourites" className="nav-link" href="#">
+                  My Favourites
+                </Link>
               </li>
             </ul>
           </div>
