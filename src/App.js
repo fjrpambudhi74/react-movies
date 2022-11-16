@@ -1,6 +1,6 @@
 import Nav from "./components/Header"
-import Movies from "./Pages/Movies";
-import Favourites from "./Pages/Favourites";
+import Movies from "./pages/Movies";
+import Favourites from "./pages/Favourites";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
