@@ -50,3 +50,15 @@ body {
     width: 70% !important;
     margin: auto;
 }
+
+.movie-title {
+  cursor: pointer;
+  text-align: left;
+}
+
+.movie-modal {
+  color: #333 !important;
+  background-color: #180b3b !important;
+  border: 2px solid #fff !important;
+  border-radius: 10px !important;
+}

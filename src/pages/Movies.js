@@ -1,8 +1,22 @@
 import React, { useEffect, useState } from 'react'
+import ModalContent from '../components/ModalContent';
 
 const Movies = () => {
   const [movies, setMovies] = useState([])
   const [searchMovies, setSearchMovies] = useState('')
+  const [showModal, setShowModal] = useState(false);
+  const [selectedId, setSelectedId] = useState(null)
+
+
+  const handleShow = (imdbID) => {
+    setSelectedId(imdbID);
+    setShowModal(true);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+    setSelectedId(null);
+  }
 
   const fetchDataMovies = async (searchMovies) => {
     const url = `http://www.omdbapi.com/?s=${searchMovies}&apikey=263d22d8`;
@@ -49,11 +63,16 @@ const Movies = () => {
               <tbody>
                 {movies.map((movie, index) => (
                   <tr key={index}>
-                    <td className="text-left">{movie.Title}</td>
+                    <td
+                      className="movie-title"
+                      onClick={() => handleShow(movie.imdbID)}
+                    >
+                      {movie.Title}
+                    </td>
                     <td>{movie.Year}</td>
                     <td>{movie.imdbID}</td>
                     <td>
-                      <i class="bi bi-star"></i>
+                      <i className="bi bi-star"></i>
                     </td>
                   </tr>
                 ))}
@@ -62,6 +81,11 @@ const Movies = () => {
           </div>
         </div>
       </div>
+      <ModalContent
+        show={showModal}
+        imdbID={selectedId}
+        handleClose={handleClose}
+      />
     </div>
   );
 }
