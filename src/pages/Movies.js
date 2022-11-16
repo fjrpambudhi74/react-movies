@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ModalContent from '../components/ModalContent';
+import TableMovie from '../components/TableMovie';
 
 const Movies = () => {
   const [movies, setMovies] = useState([])
@@ -50,35 +51,7 @@ const Movies = () => {
               onChange={(evt) => setSearchMovies(evt.target.value)}
             />
           </div>
-          <div className="table-responsive py-5">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th className="text-left pl-4">Title</th>
-                  <th>Year</th>
-                  <th>imDB ID</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                {movies.map((movie, index) => (
-                  <tr key={index}>
-                    <td
-                      className="movie-title"
-                      onClick={() => handleShow(movie.imdbID)}
-                    >
-                      {movie.Title}
-                    </td>
-                    <td>{movie.Year}</td>
-                    <td>{movie.imdbID}</td>
-                    <td>
-                      <i className="bi bi-star"></i>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+         <TableMovie movies={movies} handleShow={handleShow}/>
         </div>
       </div>
       <ModalContent
