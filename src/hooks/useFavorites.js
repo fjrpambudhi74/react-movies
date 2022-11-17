@@ -23,6 +23,7 @@ const useFavorites = () => {
         draggable: true,
         progress: undefined,
         className: "toaster",
+        theme: "dark"
       });
     } else {
       toast.warning("Item is already on your list!", {
@@ -34,6 +35,7 @@ const useFavorites = () => {
         draggable: true,
         progress: undefined,
         className: "toaster",
+        theme: "dark",
       });
     }
   };
@@ -50,6 +52,7 @@ const useFavorites = () => {
       draggable: true,
       progress: undefined,
       className: "toaster",
+      theme: "dark",
     });
   };
 

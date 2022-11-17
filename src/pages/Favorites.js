@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import TableMovie from "../components/TableMovie";
 import useFavorites from "../hooks/useFavorites";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Favourites() {
    const { favorites, setFavorites, removeFavorite } = useFavorites();
@@ -30,6 +32,7 @@ export default function Favourites() {
       ) : (
         <TableMovie movies={favorites} handleFavorites={removeFavorite} />
       )}
+      <ToastContainer/>
     </div>
   );
 }

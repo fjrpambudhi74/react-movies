@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import ModalContent from '../components/ModalContent';
 import TableMovie from '../components/TableMovie';
 import useFavorites from '../hooks/useFavorites';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Movies = () => {
   const [movies, setMovies] = useState([])
@@ -65,6 +67,7 @@ const Movies = () => {
         imdbID={selectedId}
         handleClose={handleClose}
       />
+      <ToastContainer/>
     </div>
   );
 }
