@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# React Movie Finder App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Simple Movie Application using React JS ,allows the user to search and filter movies they want  from the OMDB API
 
-## Available Scripts
+This is a responsive web application for viewing in both Mobile and Desktop.
 
-In the project directory, you can run:
+## Demo
 
-### `npm start`
+Check out a live demo and try it for yourself: [demo](https://movie-finder.vercel.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Screenshots
+![Homepage](./src/images/homepage.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ ## Run these Commands:
+ These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+### Step 1:Clone the repository
+     git clone https://github.com/fjrpambudhi74/react-movies.git
+### step 2:Navigate to the clone
+     cd your_path/React-Movie-App
+#### Step 3: Install Node.js dependencies:
+     npm install
+#### Step 4: Set your api key environment variable(.env). Get an api key from  [OMDB API](https://www.omdbapi.com/)
+     REACT_APP_API_KEY=your_api_key
+#### Step 5:
+     npm  start
 
-### `npm test`
+## Built with
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [React](https://reactjs.org/)
+- [react-router-dom](https://reactrouter.com/)
+- [bootstrap](https://getbootstrap.com/)
+- [react-bootstrap](https://react-bootstrap.github.io/)
+- [bootstrap-icon](https://icons.getbootstrap.com/)
+- [react-toastify](https://github.com/fkhadra/react-toastify)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##
+Copyright (c) 2022 Fajar Pambudhi
