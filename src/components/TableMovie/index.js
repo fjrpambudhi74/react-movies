@@ -1,5 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
+import Heart from "../Heart";
 
 const TableMovie = ({ movies, handleShow, handleFavorites }) => {
   const routesName = useLocation().pathname
@@ -27,12 +28,9 @@ const TableMovie = ({ movies, handleShow, handleFavorites }) => {
               <td>{movie.Year}</td>
               <td>{movie.imdbID}</td>
               <td>
-                <i
-                  className={`${
-                    isIconActive ? "bi bi-star-fill" : "bi bi-star"
-                  }`}
-                  onClick={() => handleFavorites(movie)}
-                ></i>
+                <div onClick={() => handleFavorites(movie)}>
+                  <Heart className="test" iconActive={isIconActive} />
+                </div>
               </td>
             </tr>
           ))}
