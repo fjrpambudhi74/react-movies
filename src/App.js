@@ -1,6 +1,6 @@
 import Nav from "./components/Header"
 import Movies from "./pages/Movies";
-import Favourites from "./pages/Favourites";
+import Favourites from "./pages/Favorites";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
@@ -11,7 +11,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" exact element={<Movies />} />
-          <Route path="/favourites" element={<Favourites />} />
+          <Route path="/favorites" element={<Favourites />} />
         </Routes>
       </div>
     </Router>

@@ -1,6 +1,10 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom';
+import Heart from "../Heart";
 
-const TableMovie = ({movies, handleShow}) => {
+const TableMovie = ({ movies, handleShow, handleFavorites }) => {
+  const routesName = useLocation().pathname
+  const isIconActive = routesName.includes("/favorites");
   return (
     <div className="table-responsive py-5">
       <table className="table">
@@ -24,7 +28,9 @@ const TableMovie = ({movies, handleShow}) => {
               <td>{movie.Year}</td>
               <td>{movie.imdbID}</td>
               <td>
-                <i className="bi bi-star"></i>
+                <div onClick={() => handleFavorites(movie)}>
+                  <Heart className="test" iconActive={isIconActive} />
+                </div>
               </td>
             </tr>
           ))}
@@ -32,6 +38,6 @@ const TableMovie = ({movies, handleShow}) => {
       </table>
     </div>
   );
-}
+};
 
 export default TableMovie

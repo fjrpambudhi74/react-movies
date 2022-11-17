@@ -1,13 +1,41 @@
 import React, { useEffect, useState } from 'react'
 import ModalContent from '../components/ModalContent';
 import TableMovie from '../components/TableMovie';
+import useFavorites from '../hooks/useFavorites';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Movies = () => {
   const [movies, setMovies] = useState([])
   const [searchMovies, setSearchMovies] = useState('')
   const [showModal, setShowModal] = useState(false);
   const [selectedId, setSelectedId] = useState(null)
+  const { favorites, addFavorite } = useFavorites();
 
+
+  useEffect(() => {
+    const localFavorites = JSON.stringify(favorites);
+    localStorage.setItem("favorites-movie", localFavorites);
+  }, [favorites]);
+
+   useEffect(() => {
+     fetchDataMovies(searchMovies);
+     if (searchMovies === "") setMovies([]);
+   }, [searchMovies]);
+
+  const fetchDataMovies = async (searchMovies) => {
+    try {
+      const url = `http://www.omdbapi.com/?s=${searchMovies}&apikey=263d22d8`;
+
+      const response = await fetch(url);
+      const responseJson = await response.json();
+
+      if (responseJson.Search) setMovies(responseJson.Search);
+    } catch (error) {
+      console.log(error)
+    }
+
+  };
 
   const handleShow = (imdbID) => {
     setSelectedId(imdbID);
@@ -19,23 +47,8 @@ const Movies = () => {
     setSelectedId(null);
   }
 
-  const fetchDataMovies = async (searchMovies) => {
-    const url = `http://www.omdbapi.com/?s=${searchMovies}&apikey=263d22d8`;
-
-    const response = await fetch(url);
-    const responseJson = await response.json();
-
-    if(responseJson.Search) setMovies(responseJson.Search);
-
-  };
-
-  useEffect(() => {
-    fetchDataMovies(searchMovies);
-    if (searchMovies === "") setMovies([]);
-  }, [searchMovies]);
-
   return (
-    <div className="container-fluid mt-3">
+    <div className="container-fluid mt-5">
       <div className="row">
         <div className="col-12">
           <h1>Movies</h1>
@@ -51,7 +64,7 @@ const Movies = () => {
               onChange={(evt) => setSearchMovies(evt.target.value)}
             />
           </div>
-         <TableMovie movies={movies} handleShow={handleShow}/>
+         <TableMovie movies={movies} handleShow={handleShow} handleFavorites={addFavorite}/>
         </div>
       </div>
       <ModalContent
@@ -59,6 +72,7 @@ const Movies = () => {
         imdbID={selectedId}
         handleClose={handleClose}
       />
+      <ToastContainer/>
     </div>
   );
 }
