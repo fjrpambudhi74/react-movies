@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 const TableMovie = ({ movies, handleShow, handleFavorites }) => {
   const routesName = useLocation().pathname
-  const isIconActive = routesName.includes("/favourites");
+  const isIconActive = routesName.includes("/favorites");
   return (
     <div className="table-responsive py-5">
       <table className="table">
