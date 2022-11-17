@@ -23,7 +23,7 @@ export default function Favourites() {
    }, [favorites]);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid mt-5">
       <h1 className="text-center mt-3">Favourites</h1>
       {favorites.length <= 0 ? (
         <div>
