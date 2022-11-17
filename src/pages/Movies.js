@@ -24,12 +24,17 @@ const Movies = () => {
    }, [searchMovies]);
 
   const fetchDataMovies = async (searchMovies) => {
-    const url = `http://www.omdbapi.com/?s=${searchMovies}&apikey=263d22d8`;
+    try {
+      const url = `http://www.omdbapi.com/?s=${searchMovies}&apikey=263d22d8`;
 
-    const response = await fetch(url);
-    const responseJson = await response.json();
+      const response = await fetch(url);
+      const responseJson = await response.json();
 
-    if (responseJson.Search) setMovies(responseJson.Search);
+      if (responseJson.Search) setMovies(responseJson.Search);
+    } catch (error) {
+      console.log(error)
+    }
+
   };
 
   const handleShow = (imdbID) => {
