@@ -16,7 +16,7 @@ export default function index() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/favourites" className="nav-link" href="#">
+                <Link to="/favorites" className="nav-link" href="#">
                   My Favourites
                 </Link>
               </li>
