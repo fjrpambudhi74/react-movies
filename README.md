@@ -6,7 +6,7 @@ This is a responsive web application for viewing in both Mobile and Desktop.
 
 ## Demo
 
-Check out a live demo and try it for yourself: [demo](https://movie-finder.vercel.app/)
+Check out a live demo and try it for yourself: [demo](https://movie-finder-beta.vercel.app/)
 
 ## Screenshots
 ![Homepage](./src/images/homepage.png)
