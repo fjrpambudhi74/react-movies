@@ -1,6 +1,9 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom';
 
-const TableMovie = ({movies, handleShow}) => {
+const TableMovie = ({ movies, handleShow, handleFavorites }) => {
+  const routesName = useLocation().pathname
+  const isIconActive = routesName.includes("/favourites");
   return (
     <div className="table-responsive py-5">
       <table className="table">
@@ -24,7 +27,12 @@ const TableMovie = ({movies, handleShow}) => {
               <td>{movie.Year}</td>
               <td>{movie.imdbID}</td>
               <td>
-                <i className="bi bi-star"></i>
+                <i
+                  className={`${
+                    isIconActive ? "bi bi-star-fill" : "bi bi-star"
+                  }`}
+                  onClick={() => handleFavorites(movie)}
+                ></i>
               </td>
             </tr>
           ))}
@@ -32,6 +40,6 @@ const TableMovie = ({movies, handleShow}) => {
       </table>
     </div>
   );
-}
+};
 
 export default TableMovie
