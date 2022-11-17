@@ -23,6 +23,7 @@ const ModalContent = (props) => {
   }
   useEffect(() => {
     fetchMovieDetail();
+    // eslint-disable-next-line
   }, [props.imdbID]);
 
   return (
@@ -38,7 +39,7 @@ const ModalContent = (props) => {
         ) : (
           <Modal.Body>
             <div className="text-center">
-              <img src={content.Poster} loading="lazy" />
+              <img src={content.Poster} loading="lazy" alt={content.Poster} />
             </div>
             <div className="pl-5 mt-4">
               <h3>{content.Title}</h3>

@@ -12,6 +12,7 @@ export default function Favourites() {
      if (parsedFavorites) {
        setFavorites(parsedFavorites);
      }
+    // eslint-disable-next-line
    }, []);
 
    useEffect(() => {
