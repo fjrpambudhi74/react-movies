@@ -51,6 +51,7 @@ const Movies = () => {
     <div className="container-fluid mt-5">
       <div className="row">
         <div className="col-12">
+
           <h1>Movies</h1>
           <div className="form-group has-search d-flex justify-content-center">
             <span className="form-control-feedback">
